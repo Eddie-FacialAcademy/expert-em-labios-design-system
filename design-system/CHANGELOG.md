@@ -14,6 +14,12 @@ versionamento segue [SemVer](https://semver.org/lang/pt-BR/):
 
 _Nada pendente no momento._
 
+## [1.0.2] — 2026-08-28
+### Corrigido
+- Swatch de preto absoluto removido das cores de marca (o escuro da marca é
+  o navy da tinta `#0F1730`); o branco `#FFFFFF` permanece por ser a cor do
+  texto no arquivo da versão para fundo escuro.
+
 ## [1.0.1] — 2026-08-28
 ### Corrigido
 - Marca refeita com as duas artes oficiais do logo escrito (fundo escuro e
