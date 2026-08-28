@@ -14,6 +14,14 @@ versionamento segue [SemVer](https://semver.org/lang/pt-BR/):
 
 _Nada pendente no momento._
 
+## [1.0.1] — 2026-08-28
+### Corrigido
+- Marca refeita com as duas artes oficiais do logo escrito (fundo escuro e
+  fundo claro), cores fixas do arquivo: saíram o logo da Facial Class, o
+  símbolo de +, a versão monocromática e o ícone (a marca não tem ícone).
+  O showcase troca a versão por tema; composições exibidas sobre o fundo
+  correto.
+
 ## [1.0.0] — 2026-08-28
 
 Primeira versão do Expert em Lábios 2026, curso da Facial Class, derivada do

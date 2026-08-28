@@ -12,7 +12,7 @@ Desenvolvido por **Edegar Junior**. Ponto de retomada; atualizar conforme avanç
 ### Marca
 - Curso da **Facial Class**, derivado do molde **Facial Academy** (mesma arquitetura, seções e JS).
 - Paleta extraída do **gradiente do 26**: azul gelo `#B3E3FB` e azul `#6B99E6`. Derivadas: azul claro `#9CD4F5`, azul texto `#2C4FA3`, azul CTA claro `#1D3E8F`, azul profundo `#16306F`, navy da tinta `#0F1730`, fundos escuros navy-azulados `#0A0E1D` a `#1F2547`. Apoio herdado: amarelo `#FFE4A4`, vermelho claro `#FFB1BD`, amarelado `#FFCA9B`.
-- **Logo:** co-brand "facialclass + Expert em Lábios 26" (horizontal, vertical, monocromático e ícone 26). O arquivo só traz versão para fundo escuro (texto branco); sobre claro o texto usa o azul `#6B99E6` **do próprio arquivo** (logos são isentos de contraste na WCAG). Fonte dos arquivos: `34 - Expert em Lábios 2026/_assets` (`FC+EL26 2.svg` e `logo-vert2.svg`; o restante da pasta é legado e não se usa).
+- **Logo:** o logo escrito "Expert em LÁBIOS 26", em DUAS versões oficiais com cores fixas do arquivo: fundo escuro (`experte em labios 2026 2.svg`, texto branco + 26 em gradiente) e fundo claro (`experte em lábio 26.svg`, texto azul + 26 branco). **Sem monocromático, sem ícone, sem vertical, sem o logo da Facial Class.** Não recolorir; o showcase troca a versão por tema. Fonte: `34 - Expert em Lábios 2026/_assets` (esses 2 arquivos; o restante da pasta é legado).
 - **CTA de gelo (assinatura da marca no escuro):** gradiente `#B3E3FB → #6B99E6` com tinta navy `#0F1730`; no claro, `#1D3E8F → #2C4FA3` com branco.
 - **Domínio:** preenchimento labial expert (avaliação, proporção, agulha e cânula, naturalidade, casos). Glossário em `design-system/glossario-marca.md`.
 
@@ -25,7 +25,6 @@ Desenvolvido por **Edegar Junior**. Ponto de retomada; atualizar conforme avanç
 
 ## 📌 Próximos passos possíveis
 - Landing/página da marca no Framer (subir Color Styles e Text Styles a partir dos tokens).
-- Se sair uma versão do logo para fundo claro, plugar no lugar do azul derivado do arquivo.
 
 ## Como publicar mudanças
 Editar → `git add/commit/push` na `main` (credencial no Cofre do Windows; `.git` em `AppData\Local\gitdirs\expert-em-labios-design-system`; line-endings LF via `.gitattributes`). O GitHub Pages atualiza sozinho em ~1 minuto.

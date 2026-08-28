@@ -6,7 +6,7 @@ Desenvolvido por **Edegar Junior**.
 
 ## Entregas
 
-- **index.html** — design system reutilizável (showcase navegável): paleta (institucional + derivada, com o grupo "Gradiente da marca" e a construção do gradiente do 26), temas **dark/light**, tipografia (Silka), **gradientes**, **ícones** (Phosphor Thin, copiar SVG), **logos** (horizontal, vertical, monocromático e ícone; copiar/baixar SVG) e sistema de **botões** com o **CTA de gelo** no tema escuro. Click-to-copy em cores, valores e código; download PNG dos gradientes.
+- **index.html** — design system reutilizável (showcase navegável): paleta (institucional + derivada, com o grupo "Gradiente da marca" e a construção do gradiente do 26), temas **dark/light**, tipografia (Silka), **gradientes**, **ícones** (Phosphor Thin, copiar SVG), **logos** (as duas versões oficiais, por fundo; copiar/baixar SVG) e sistema de **botões** com o **CTA de gelo** no tema escuro. Click-to-copy em cores, valores e código; download PNG dos gradientes.
   - 🌐 **Online (para compartilhar):** https://eddie-facialacademy.github.io/expert-em-labios-design-system/ — GitHub Pages (repo público `expert-em-labios-design-system`).
 
 ## Design System portátil (`design-system/`)
@@ -23,7 +23,7 @@ Pacote para aplicar a marca em **qualquer projeto/ferramenta** (web, React, Fram
 ## Notas técnicas
 
 - **Cores:** extraídas do **gradiente do 26** (azul gelo `#B3E3FB`, azul `#6B99E6`) mais o navy `#0F1730` da tinta do CTA e o apoio herdado da família (amarelo claro `#FFE4A4`, vermelho claro `#FFB1BD`, amarelado `#FFCA9B`). Derivadas medidas em WCAG AA nos dois temas (40 pares, 0 falhas).
-- **Logo:** co-brand "facialclass + Expert em Lábios 26". Texto nas cores do arquivo: branco sobre escuro, azul `#6B99E6` sobre claro (cor institucional do próprio logo; logos são isentos da exigência de contraste da WCAG). O 26 mantém o gradiente oficial e não se recolore.
+- **Logo:** o logo escrito em duas versões oficiais com cores fixas do arquivo (fundo escuro: branco + 26 em gradiente; fundo claro: azul + 26 branco). Sem monocromático e sem ícone; não se recolore.
 - **Tipografia:** Silka (institucional), embutida em base64/woff2; Poppins como fallback, depois system-ui. **Headers em Medium (500)**.
 - **Ícones:** biblioteca **Phosphor**, peso **Thin** (stroke 1pt na grade 24), `currentColor`.
 - **Tema:** dark por padrão; light via `data-theme="light"`; sem atributo segue `prefers-color-scheme`. Toggle persiste em `el-theme`.
