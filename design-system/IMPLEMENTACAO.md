@@ -1,9 +1,9 @@
-# Implementação — Expert em Lábios 2026 Design System
+# Implementação: Expert em Lábios 2026 Design System
 
 Documentação técnica de **como cada item é implementado**, para subir em qualquer infra (HTML/CSS puro, qualquer stack via tokens, ou Framer). Tudo aqui reflete o que está no showcase publicado (`index.html`) e no pacote `design-system/`. Em caso de divergência, **o showcase + `expert-em-labios-design-tokens.json` são a fonte da verdade**; o `expert-em-labios-design-system.css` (drop-in) espelha esses tokens.
 
 - **Sem build step.** O showcase é um único `index.html` self-contained (CSS em `<style>`, SVGs em `<defs><symbol>`, JS em `<script>`, fonte Silka embutida em base64). Abre direto no navegador, sem bundler, sem dependências de rede.
-- **Marca irmã:** Corporal Class. Mesma arquitetura; só mudam cores, prefixo de classe (`cc-`), chave de tema (`cc-theme`) e nomes de arquivo. Ver a seção **13. Diferenças por marca**.
+- **Molde:** Facial Academy. Mesma arquitetura; mudam cores, prefixo de classe (`el-`), chave de tema (`el-theme`), nomes de arquivo e logo. Ver a seção **13. Diferenças em relação ao molde**.
 
 ---
 
@@ -58,7 +58,7 @@ O toggle (`#themeToggle`, `.theme-toggle`, com `aria-pressed`) alterna `data-the
 
 > **Numa infra sua:** para evitar flash de tema, replique o IIFE de init no `<head>` (inline, antes do CSS). Sem JS, o site ainda segue `prefers-color-scheme`.
 
-### 2.2 Cores institucionais (brand) — base imutável
+### 2.2 Cores institucionais (brand): base imutável
 
 Cores institucionais da marca: azul gelo `#B3E3FB` e azul `#6B99E6` (do gradiente do 26) mais o navy `#0F1730` da tinta e o apoio herdado. Nada deve sair daqui.
 
@@ -66,11 +66,11 @@ Cores institucionais da marca: azul gelo `#B3E3FB` e azul `#6B99E6` (do gradient
 |---|---|---|
 | `--brand-roxo` | `#6B99E6` | predominante |
 | `--brand-lilas` | `#B3E3FB` | accent claro |
+| `--brand-navy` | `#0F1730` | tinta do CTA de gelo |
 | `--brand-amarelo` | `#FFE4A4` | dourado |
 | `--brand-vermelho` | `#FFB1BD` | rosa |
 | `--brand-amarelado` | `#FFCA9B` | pêssego |
-| `--brand-branco` | `#FFFFFF` | — |
-| `--brand-preto` | `#000000` | — |
+| `--brand-branco` | `#FFFFFF` | texto do logo na versão para fundo escuro |
 
 Os `--brand-*` **não** mudam entre temas; os tokens de tema abaixo é que derivam deles.
 
@@ -87,12 +87,12 @@ Os `--brand-*` **não** mudam entre temas; os tokens de tema abaixo é que deriv
 | `--mut` | `#BFC9E0` | `#4F5A7D` | texto secundário |
 | `--legal-mut` | `#7D89B0` | `#4F5A7D` | texto legal/rodapé |
 | `--roxo` | `#16306F` | `#16306F` | azul profundo (gradiente) |
-| `--roxo2` | `#6B99E6` | `#6B99E6` | primária (seleção, dia/linha selecionada) |
-| `--roxo-bright` | `#9CD4F5` | `#9CD4F5` | azul gelo (base do `--cta` escuro) |
+| `--roxo2` | `#6B99E6` | `#6B99E6` | azul primário da marca |
+| `--roxo-bright` | `#9CD4F5` | `#9CD4F5` | azul claro (mesmo valor do hover `--cta-solid-h` escuro) |
 
-#### CTA — token theme-aware (acessibilidade de contraste de componente)
+#### CTA: token theme-aware (acessibilidade de contraste de componente)
 
-O **CTA** (botão preenchido/sólido) é o único token de cor que muda de tom entre os temas **por acessibilidade de componente** (WCAG 1.4.11 — *Non-text Contrast*, ≥3:1 do botão vs. fundo). No tema escuro, o CTA é o botão de gelo: `#B3E3FB` com tinta navy `#0F1730` (12.9:1; botão vs fundo 14:1). No claro, `#1D3E8F` com branco (9.8:1).
+O **CTA** (botão preenchido/sólido) é o único token de cor que muda de tom entre os temas **por acessibilidade de componente** (WCAG 1.4.11, *Non-text Contrast*, ≥3:1 do botão vs. fundo). No tema escuro, o CTA é o botão de gelo: `#B3E3FB` com tinta navy `#0F1730` (12.9:1; botão vs fundo 14:1). No claro, `#1D3E8F` com branco (9.8:1).
 
 | Token | Dark | Light | Uso |
 |---|---|---|---|
@@ -101,7 +101,8 @@ O **CTA** (botão preenchido/sólido) é o único token de cor que muda de tom e
 | `--cta-solid-h` | `#9CD4F5` | `#16306F` | hover do sólido |
 | `--cta-ink` | `#0F1730` | `#fff` | texto sobre o CTA |
 
-> **Regra:** os botões fill/solid consomem **`--cta-*`**, nunca `--roxo2`/`--roxo-bright` direto. Trocar o tom do CTA é trocar só estes tokens (não toca na cor de marca). A marca roxa segue **inalterada**; `--roxo2 #6B99E6` continua sendo a primária para seleção (linha/dia selecionado etc.).
+> **Regra:** os botões fill/solid consomem **`--cta-*`**, nunca `--roxo2`/`--roxo-bright` direto. Trocar o tom do CTA é trocar só estes tokens (não toca na cor de marca). A cor de marca segue **inalterada**; `--roxo2 #6B99E6` continua sendo o azul primário. O dia selecionado do calendário usa `--cta-solid`/`--cta-ink` e a linha selecionada usa `--row-sel`.
+
 | Token | Escuro | Claro | Papel |
 |---|---|---|---|
 | `--lilas` | `#B3E3FB` | `#2C4FA3` | **accent interativo** (links, ativo, foco) |
@@ -136,7 +137,7 @@ O **CTA** (botão preenchido/sólido) é o único token de cor que muda de tom e
 /* Tamanhos */        --size-icon-sm:16  --size-icon:20  --size-icon-lg:24  --control-h:44  --touch-min:44 (px)
 /* Aspect ratio */    --ar-square:1/1  --ar-photo:4/3  --ar-wide:16/9
 /* Code (escuro nos 2 temas) */ --code-bg:#060912  --code-txt:#D5EEFC  --code-comment:#8FA0C9  --code-key:#FFE4A4
-/* Componentes */     --row-h:46px  --row-h-compact:38px  --side-w:248px  --cal-cell:38px  --row-sel:(accent .16 dark / .10 light; Corporal light usa rgba(194,67,78,.10))
+/* Componentes */     --row-h:46px  --row-h-compact:38px  --side-w:248px  --cal-cell:38px  --row-sel:(accent .16 dark / .10 light)
 ```
 
 **Elevação (sombra em camadas; dark preto, light com matiz da marca):**
@@ -200,10 +201,10 @@ Todas as transições/animações viram instantâneas. (Ao auditar contraste por
 ### 3.5 Ícones
 - Biblioteca **Phosphor**, peso **Thin** (traço 1 na grade 24). Definidos uma vez em `<svg><defs><symbol id="ph-…">` e referenciados por `<use href="#ph-…"/>`.
 - Cor por `currentColor` (herda `color`/accent, segue o tema). Ícone decorativo leva `aria-hidden="true"`; ícone que informa estado vem **com texto**.
-- IDs de logo: `logo-hor`, `logo-hor-mono`, `logo-vert`, `logo-icon`, `logo-icon-mono` (lockups oficiais, `fill=currentColor`, cor via `--logo`). IDs de UI: `i-arrow/i-check/i-sun/i-moon/i-copy/i-download` + ~60 `ph-*`.
+- IDs de logo: `logo-dark` e `logo-light` (as duas versões oficiais, cores fixas do arquivo, sem recolorir; o showcase troca a versão por tema). IDs de UI: `i-arrow/i-check/i-sun/i-moon/i-copy/i-download` + ~60 `ph-*`.
 
 ### 3.6 Gradientes
-Montados só com cores do brand. Tipos: linear primário (`roxo2→roxo`), espectral (azul→gelo→rosa→pêssego), **malha** (multi radial-gradient sobre `--bg`) e **spot** (radial topo). Sem cônico, sem blob, sem halo. Ver seção 03 do showcase.
+Montados só com cores do brand. Tipos: linear primário (`#1D3E8F → #2C4FA3`), espectral (azul→gelo→rosa→pêssego), **malha** (multi radial-gradient sobre `--bg`) e **spot** (radial topo). Sem cônico, sem blob, sem halo. Ver seção 03 do showcase.
 
 ---
 
@@ -211,7 +212,7 @@ Montados só com cores do brand. Tipos: linear primário (`roxo2→roxo`), espec
 
 Classe base **`.b`** (drop-in: `.el-btn`). Composição: `.b` + tamanho (`.sm`/`.md`/`.lg`) + variante (`.fill`/`.solid`/`.outline`/`.ghost`/`.gold`/`.gold-o`). Ícone interno: `.ico` (drop-in `.el-ico`).
 
-> **CTA (fill/solid) lê `--cta-*`, não `--roxo2`/`--roxo-bright` direto.** `.b.fill`/`.el-fill` usa `--cta-grad` + `--cta-ink`; `.b.solid`/`.el-solid` usa `--cta-solid` (hover `--cta-solid-h`). O `--cta` é **theme-aware**: no escuro é roxo mais claro (`#9CD4F5`) para o botão passar contraste de componente (≥3:1 vs. fundo, WCAG 1.4.11); no claro fica `#6B99E6` (inalterado). Ver "CTA — token theme-aware" na seção 2.3.
+> **CTA (fill/solid) lê `--cta-*`, não `--roxo2`/`--roxo-bright` direto.** `.b.fill`/`.el-fill` usa `--cta-grad` + `--cta-ink`; `.b.solid`/`.el-solid` usa `--cta-solid` (hover `--cta-solid-h`). O `--cta` é **theme-aware**: no escuro é o botão de gelo (`#B3E3FB` com tinta navy `#0F1730`), que passa contraste de componente (≥3:1 vs. fundo, WCAG 1.4.11); no claro usa azul profundo `#1D3E8F` com branco. Ver "CTA: token theme-aware" na seção 2.3.
 
 ```css
 .b{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:inherit;
@@ -354,23 +355,23 @@ Accordion usa `<details>/<summary>` nativo (estado open gratuito + acessível); 
 
 ### 5.7 Avançados (camada de produto)
 
-**Data table (`.dtbl`)** — em wrapper `.dtbl-x{overflow-x:auto}`:
+**Data table (`.dtbl`)**, em wrapper `.dtbl-x{overflow-x:auto}`:
 - Cabeçalho sticky: `thead th{position:sticky;top:0;background:var(--card2)}`, uppercase 10.5px.
 - Ordenação: botão `.ths` no `th`; estado em `aria-sort="ascending|descending"`; a seta SVG gira (`[aria-sort="ascending"] .ths svg{transform:rotate(180deg);opacity:1}`).
 - Linha: `tbody tr{transition:background .2s}`; `tr:hover{background:var(--card2)}`; `tr.is-sel{background:var(--row-sel)}` (tint do accent).
 - Seleção: `.check` na `.col-ck`; densidade `.dtbl.compact` (linha 46→38px via `--row-h`/`--row-h-compact`).
 - Status: `.st` + `.st i` (ponto) com `.ok`(success)/`.warn`(warning)/`.off`(mut).
 
-**Command palette (`.cmdk`)** — overlay com `.cmdk-scrim`:
+**Command palette (`.cmdk`)**: overlay com `.cmdk-scrim`:
 - `.cmdk{width:min(520px,100%);box-shadow:var(--elev-modal)}`, input `.cmdk-in`, lista `.cmdk-list{max-height:262px;overflow-y:auto}`, grupos `.cmdk-grp` (uppercase).
 - Item `.cmdk-item`; `:hover{background:var(--card2)}`; ativo `.is-active{background:var(--row-sel)}` + ícone em `--lilas` + `.kbd` (↵).
 - `.kbd`: tecla com `border-bottom-width:2px` (relevo), `tabular-nums`.
 
-**App shell (`.appshell`)** — `grid-template-columns:var(--side-w) 1fr` (248px + conteúdo), `min-width:660px`:
+**App shell (`.appshell`)**: `grid-template-columns:var(--side-w) 1fr` (248px + conteúdo), `min-width:660px`:
 - Sidebar `.appside` (brand + `.navgroup-lbl` + itens + `.side-foot`); topbar `.appbar`.
 - Item `.navitem`; `:hover{background:var(--card2);color:var(--txt)}`; ativo `.is-active{background:var(--row-sel)}` + **faixa accent à esquerda** via `::before{width:3px;background:var(--lilas)}` + ícone em `--lilas`.
 
-**Date picker (`.cal`)** — calendário `width:296px`, grid `.cal-grid{grid-template-columns:repeat(7,1fr)}`:
+**Date picker (`.cal`)**: calendário `width:296px`, grid `.cal-grid{grid-template-columns:repeat(7,1fr)}`:
 - Dia `.cal-day{height:var(--cal-cell)}`; `:hover{background:var(--card2)}`.
 - Estados: `.is-out{opacity:.5}` · `.is-today{box-shadow:inset 0 0 0 1.5px var(--lilas)}` · `.is-range{background:var(--row-sel)}` · `.is-sel{background:var(--cta-solid);color:var(--cta-ink)}` (o dia selecionado usa os tokens do CTA por tema: gelo com tinta navy no escuro, azul profundo com branco no claro).
 
@@ -405,8 +406,8 @@ Tudo vanilla, sem dependências. Scripts no fim do `<body>`.
 ## 8. Acessibilidade ⭐
 
 - **Contraste WCAG 2.1 AA em 2 níveis**, medido nos 2 temas:
-  - **Nível 1 — texto:** texto normal ≥4.5:1; texto grande ≥3:1 (WCAG 1.4.3).
-  - **Nível 2 — componente:** o próprio botão/controle (fundo do componente) vs. o fundo da página ≥3:1 (WCAG 1.4.11, *Non-text Contrast*).
+  - **Nível 1 (texto):** texto normal ≥4.5:1; texto grande ≥3:1 (WCAG 1.4.3).
+  - **Nível 2 (componente):** o próprio botão/controle (fundo do componente) vs. o fundo da página ≥3:1 (WCAG 1.4.11, *Non-text Contrast*).
   - O **CTA do escuro é o botão de gelo** (`#B3E3FB` com tinta navy `#0F1730`, 12.9:1); o claro usa azul profundo `#1D3E8F` com texto branco (9.8:1).
 
   Verificado por sweep automatizado (compondo fundos semi-transparentes sobre o pai e desativando transições antes de medir). 0 falhas em dark e light, nos dois níveis.
@@ -442,17 +443,17 @@ Tudo vanilla, sem dependências. Scripts no fim do `<body>`.
 ```
 Dark é o padrão; `data-theme="light"` no `<html>` força claro; sem isso segue `prefers-color-scheme`. Para toggle sem flash, replique o IIFE de init no `<head>`.
 
-**B) Tokens (qualquer stack)** — importe `expert-em-labios-design-tokens.json` e gere CSS vars / JS / Tailwind theme. Componentes consomem token, nunca hex.
+**B) Tokens (qualquer stack)**: importe `expert-em-labios-design-tokens.json` e gere CSS vars / JS / Tailwind theme. Componentes consomem token, nunca hex.
 
-**C) Framer** — crie **Color Styles** (cada um com valor Claro e Escuro), **Text Styles** por breakpoint (L/M/S = 1200/810/390), use `Button.tsx` como Code Component e ícones Phosphor Thin. O site publicado segue `prefers-color-scheme`.
+**C) Framer**: crie **Color Styles** (cada um com valor Claro e Escuro), **Text Styles** por breakpoint (L/M/S = 1200/810/390), use `Button.tsx` como Code Component e ícones Phosphor Thin. O site publicado segue `prefers-color-scheme`.
 
 ---
 
 ## 11. Deploy / infra
 
-- **Repos:** `Eddie-FacialAcademy/expert-em-labios-design-system` (irmão: `corporal-class-design-system`).
-- **Hospedagem:** GitHub Pages, servindo o `index.html` self-contained da raiz. **Sem build/CI** — `git push` na `main` publica.
-- **Cache:** Pages (Fastly) tem `Cache-Control:max-age=600`; após push, propaga em ~1–3 min. No navegador, use hard refresh (Ctrl+Shift+R) ou query `?v=`.
+- **Repo:** `Eddie-FacialAcademy/expert-em-labios-design-system`.
+- **Hospedagem:** GitHub Pages, servindo o `index.html` self-contained da raiz. **Sem build/CI**: `git push` na `main` publica.
+- **Cache:** Pages (Fastly) tem `Cache-Control:max-age=600`; após push, propaga em ~1 a 3 min. No navegador, use hard refresh (Ctrl+Shift+R) ou query `?v=`.
 - **Git:** credencial via Git Credential Manager (sem token em arquivo); `.git` fora do OneDrive (`AppData\Local\gitdirs\`); EOL travado em LF (`.gitattributes`); `desktop.ini` ignorado.
 - **URL ao vivo:** https://eddie-facialacademy.github.io/expert-em-labios-design-system/
 
@@ -468,27 +469,24 @@ Dark é o padrão; `data-theme="light"` no `<html>` força claro; sem isso segue
 
 ---
 
-## 13. Diferenças por marca (Expert em Lábios × Corporal)
+## 13. Diferenças em relação ao molde (Expert em Lábios × Facial Academy)
 
-Mesma arquitetura, JS, componentes, escalas e semânticas. Mudam:
+Mesma arquitetura, JS, componentes, escalas e semânticas success/warning/danger. Mudam:
 
-| Aspecto | Expert em Lábios 2026 | Corporal Class |
+| Aspecto | Expert em Lábios 2026 | Facial Academy (molde) |
 |---|---|---|
-| Arquivos | `expert-em-labios-design-system.css` · `expert-em-labios-design-tokens.json` · `copy-deck.expert-em-labios.json` | `corporal-design-system.css` · `corporal-design-tokens.json` · `copy-deck.corporal.json` |
-| Prefixo de classe (drop-in) | `el-*` | `cc-*` |
-| Chave de tema | `localStorage['el-theme']` | `localStorage['cc-theme']` |
-| id do cmdk | `cmdk-list-el` | `cmdk-list-co` |
-| Marca / Academy | Expert em Lábios 2026 / Expert em Lábios 2026 | Corporal Class / Corporal Academy |
-| Token primário | `--roxo2 #6B99E6` | `--bordo2 #D6515C` |
-| Accent interativo | `--lilas` (#B3E3FB dark / #6B99E6 light) | `--coral` (#E88A92 dark / #C2434E light) |
-| `--info` (dark/light) | `#B3E3FB` / `#5E4A8C` (roxo) | `#74C0D8` / `#2A7286` (**teal**, p/ não confundir com o coral/vermelho) |
-| Foco (`--focus-ring` dark/light) | `#B3E3FB` / `#2C4FA3` | `rgba(232,138,146,.55)` |
-| Sombra (matiz) | `rgba(44,79,163,…)` | `rgba(214,81,92,…)` |
-| Logo no nav | 24px | 30px (lockup com mais respiro) |
+| Arquivos | `expert-em-labios-design-system.css` · `expert-em-labios-design-tokens.json` · `copy-deck.expert-em-labios.json` | `facial-academy-design-system.css` · `facial-academy-design-tokens.json` · `copy-deck.facial-academy.json` |
+| Prefixo de classe (drop-in) | `el-*` | `fc-*` |
+| Chave de tema | `localStorage['el-theme']` | `localStorage['fc-theme']` |
+| id do cmdk | `cmdk-list-el` | `cmdk-list-fa` |
+| Token primário | `--roxo2 #6B99E6` | `--roxo2 #644389` |
+| Accent interativo | `--lilas` (`#B3E3FB` dark / `#2C4FA3` light) | `--lilas` (`#A289D7` dark / `#644389` light) |
+| `--info` (dark/light) | `#B3E3FB` / `#5E4A8C` | `#A289D7` / `#5E4A8C` |
+| Foco (`--focus-ring` dark/light) | `#B3E3FB` / `#2C4FA3` | `#A289D7` / `#644389` |
+| Sombra (matiz) | `rgba(44,79,163,…)` | `rgba(100,67,137,…)` |
+| Logo | duas versões oficiais (`logo-dark`, `logo-light`) com cores fixas do arquivo, trocadas por tema | lockup em `currentColor` |
 
-**Cores institucionais da Corporal**: `--brand-bordo #D6515C` · `--brand-coral #E88A92` · `--brand-amarelo #FFE4A4` · `--brand-vermelho #FFB1BD` · `--brand-amarelado #FFCA9B` · branco · preto. Superfícies/texto no tema são tingidos no bordô (ex.: dark `--bg #0E0708`, `--card #241619`, `--txt #FAF7F8`; light `--bg #FAFAFA`, `--card #FEF8F8`, `--txt #2A1517`). Semânticas success/warning/danger são **iguais** nas duas marcas.
-
-> Trocar de marca = trocar a linha de import (`expert-em-labios-…`↔`corporal-…`) e o prefixo de classe. O resto do código é idêntico.
+> Trocar de marca = trocar a linha de import (`expert-em-labios-…`↔`facial-academy-…`) e o prefixo de classe. O resto do código é idêntico.
 
 ---
 

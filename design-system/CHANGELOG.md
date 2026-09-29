@@ -1,12 +1,12 @@
-# Changelog — Expert em Lábios 2026 Design System
+# Changelog: Expert em Lábios 2026 Design System
 
 Todas as mudanças relevantes deste design system são registradas aqui.
 O formato segue [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e o
 versionamento segue [SemVer](https://semver.org/lang/pt-BR/):
 
-- **MAJOR** — muda ou remove um token/API público (quebra compatibilidade).
-- **MINOR** — adiciona de forma retrocompatível (novo componente/token/variante).
-- **PATCH** — correções que não mudam a API (bug, contraste, ajuste fino).
+- **MAJOR**: muda ou remove um token/API público (quebra compatibilidade).
+- **MINOR**: adiciona de forma retrocompatível (novo componente/token/variante).
+- **PATCH**: correções que não mudam a API (bug, contraste, ajuste fino).
 
 ---
 
@@ -14,13 +14,22 @@ versionamento segue [SemVer](https://semver.org/lang/pt-BR/):
 
 _Nada pendente no momento._
 
-## [1.0.2] — 2026-08-28
+## [1.0.3] · 2026-09-29
+### Corrigido
+- `--brand-navy` presente também no showcase (antes só no CSS e no JSON).
+- Tabela de acessibilidade do showcase com valores medidos nos dois temas (antes repetia números do molde que não eram desta paleta) e linha nova "CTA contra o fundo" (nível 2).
+### Alterado
+- Seletor de design systems inclui a Facial Premium, na ordem única usada em todos os DS.
+- Versão alinhada em todos os arquivos: tokens, CSS, copy-deck e documentação estavam presos em uma versão anterior ao CHANGELOG.
+- Documentação sem travessão e sem "&", com valores de cor, contraste e classe conferidos contra o CSS e o JSON; referências a versões e arquivos inexistentes corrigidas.
+
+## [1.0.2] · 2026-08-28
 ### Corrigido
 - Swatch de preto absoluto removido das cores de marca (o escuro da marca é
   o navy da tinta `#0F1730`); o branco `#FFFFFF` permanece por ser a cor do
   texto no arquivo da versão para fundo escuro.
 
-## [1.0.1] — 2026-08-28
+## [1.0.1] · 2026-08-28
 ### Corrigido
 - Marca refeita com as duas artes oficiais do logo escrito (fundo escuro e
   fundo claro), cores fixas do arquivo: saíram o logo da Facial Class, o
@@ -28,7 +37,7 @@ _Nada pendente no momento._
   O showcase troca a versão por tema; composições exibidas sobre o fundo
   correto.
 
-## [1.0.0] — 2026-08-28
+## [1.0.0] · 2026-08-28
 
 Primeira versão do Expert em Lábios 2026, curso da Facial Class, derivada do
 molde Facial Academy. Paleta extraída do gradiente do numeral 26 do logo

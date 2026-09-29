@@ -21,7 +21,7 @@ Técnica · direta · confiante · precisa · antiimproviso.
 
 ## Não faça
 - **Sem "&".** Escreva a palavra "e".
-- **Sem travessão** (— em-dash nem – en-dash) no meio do texto. Use vírgula, dois-pontos, parênteses ou hífen comum ("-").
+- **Sem travessão** (`—` em-dash nem `–` en-dash) no meio do texto. Use vírgula, dois-pontos, ponto ou parênteses; não troque por hífen solto.
 - Sem **hipérbole** ("a melhor", "incrível", "revolucionário"). Superlativo vazio enfraquece.
 - Sem **"happy talk"** ("Bem-vindo!", "Que bom te ver!").
 - Não **compare arquétipos** de profissional ("a diferença entre quem tem sucesso e quem tem medo").

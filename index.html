@@ -16,6 +16,7 @@
     /* ===== Expert em Lábios 2026 · cores institucionais ===== */
     --brand-roxo:#6B99E6;      /* azul · do gradiente do 26 · predominante */
     --brand-lilas:#B3E3FB;     /* azul gelo · do gradiente do 26 */
+    --brand-navy:#0F1730;
     --brand-amarelo:#FFE4A4;   /* amarelo claro · pantone 7401 U 25% */
     --brand-vermelho:#FFB1BD;  /* vermelho claro · pantone red 0331 U */
     --brand-amarelado:#FFCA9B; /* amarelado · pantone 712 U */
@@ -816,6 +817,7 @@ body{font-family:'Silka','Poppins',system-ui,-apple-system,Segoe UI,Roboto,sans-
         <div class="tn-menu" role="menu">
           <a role="menuitem" href="https://eddie-facialacademy.github.io/facial-academy-design-system/">Facial Academy</a>
           <a role="menuitem" href="https://eddie-facialacademy.github.io/facialclass-design-system/">Facial Class</a>
+          <a role="menuitem" href="https://eddie-facialacademy.github.io/facial-premium-design-system/">Facial Premium</a>
           <a role="menuitem" href="https://eddie-facialacademy.github.io/facial-scale-design-system/">Facial Scale</a>
           <a role="menuitem" href="https://eddie-facialacademy.github.io/workshops-facial-design-system/">Workshops Facial</a>
           <a role="menuitem" href="https://eddie-facialacademy.github.io/fotografia-na-hof-design-system/">Fotografia na HOF</a>
@@ -1506,21 +1508,23 @@ background:linear-gradient(120deg,#1D3E8F,#2C4FA3); color:#fff;</div>
   <div class="a11y">
     <div class="a11y-col">
       <div class="a11y-h">Tema dark</div>
-      <div class="a11y-row"><span>Texto em fundo</span><span class="ok">18.9:1</span></div>
-      <div class="a11y-row"><span>Secundário em cartão</span><span class="ok">4.9:1</span></div>
-      <div class="a11y-row"><span>Azul gelo (links) em fundo</span><span class="ok">6.8:1</span></div>
-      <div class="a11y-row"><span>Dourado em fundo</span><span class="ok">16.1:1</span></div>
-      <div class="a11y-row"><span>Tinta navy no botão de gelo</span><span class="ok">7.8:1</span></div>
-      <div class="a11y-row"><span>Aviso legal no rodapé</span><span class="ok">4.6:1</span></div>
+      <div class="a11y-row"><span>Texto em fundo</span><span class="ok">18.3:1</span></div>
+      <div class="a11y-row"><span>Secundário em cartão</span><span class="ok">10.0:1</span></div>
+      <div class="a11y-row"><span>Azul gelo (links) em fundo</span><span class="ok">14.0:1</span></div>
+      <div class="a11y-row"><span>Dourado em fundo</span><span class="ok">15.4:1</span></div>
+      <div class="a11y-row"><span>Tinta navy no botão de gelo</span><span class="ok">5.7:1</span></div>
+      <div class="a11y-row"><span>CTA contra o fundo</span><span class="ok">6.7:1</span></div>
+      <div class="a11y-row"><span>Aviso legal no rodapé</span><span class="ok">5.6:1</span></div>
     </div>
     <div class="a11y-col">
       <div class="a11y-h">Tema light</div>
-      <div class="a11y-row"><span>Texto em fundo</span><span class="ok">16.9:1</span></div>
-      <div class="a11y-row"><span>Secundário em fundo</span><span class="ok">6.0:1</span></div>
-      <div class="a11y-row"><span>Azul (accent/links)</span><span class="ok">7.8:1</span></div>
-      <div class="a11y-row"><span>Dourado-ink (texto)</span><span class="ok">6.4:1</span></div>
-      <div class="a11y-row"><span>Rosa-ink (texto)</span><span class="ok">5.3:1</span></div>
-      <div class="a11y-row"><span>Tinta navy no botão de gelo</span><span class="ok">7.8:1</span></div>
+      <div class="a11y-row"><span>Texto em fundo</span><span class="ok">16.4:1</span></div>
+      <div class="a11y-row"><span>Secundário em fundo</span><span class="ok">6.5:1</span></div>
+      <div class="a11y-row"><span>Azul (accent/links)</span><span class="ok">7.3:1</span></div>
+      <div class="a11y-row"><span>Dourado-ink (texto)</span><span class="ok">6.1:1</span></div>
+      <div class="a11y-row"><span>Rosa-ink (texto)</span><span class="ok">5.0:1</span></div>
+      <div class="a11y-row"><span>Tinta navy no botão de gelo</span><span class="ok">7.4:1</span></div>
+      <div class="a11y-row"><span>CTA contra o fundo</span><span class="ok">7.3:1</span></div>
     </div>
   </div>
   <p class="sec-note" style="margin-top:24px">No tema light, dourado e rosa como <b class="hl">texto</b> usam as variantes -ink (escurecidas) para garantir AA; como preenchimento mantêm a cor institucional. Mantenha foco visível (outline) nos interativos e alvos de toque ≥ 44px.</p>
@@ -1613,7 +1617,7 @@ background:linear-gradient(120deg,#1D3E8F,#2C4FA3); color:#fff;</div>
       <tr><td>Cartão médio</td><td>16</td><td>8</td><td>8</td></tr>
       <tr><td>Cartão pequeno / campo</td><td>12</td><td>8</td><td>4</td></tr>
       <tr><td>Tile compacto</td><td>8</td><td>8</td><td class="muted">0 · reto</td></tr>
-      <tr><td>Pill / botão</td><td class="muted">full</td><td class="muted">—</td><td class="muted">exceção</td></tr>
+      <tr><td>Pill / botão</td><td class="muted">full</td><td class="muted">não se aplica</td><td class="muted">exceção</td></tr>
     </tbody>
   </table>
   <div class="group-lbl">CSS · derive o interno com calc()</div>

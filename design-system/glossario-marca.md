@@ -1,4 +1,4 @@
-# Glossário da marca — Expert em Lábios 2026
+# Glossário da marca: Expert em Lábios 2026
 
 Termos do domínio desta marca. Eles aparecem na copy do showcase, nos demos e
 no material do produto. **Não cruzam para outro design system** (regra de

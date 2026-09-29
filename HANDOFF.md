@@ -1,4 +1,4 @@
-# Handoff — Expert em Lábios 2026 Design System (Versão 1.0.0 · estado em 2026-08-28)
+# Handoff: Expert em Lábios 2026 Design System (Versão 1.0.3 · estado em 2026-09-29)
 
 Desenvolvido por **Edegar Junior**. Ponto de retomada; atualizar conforme avançar.
 
