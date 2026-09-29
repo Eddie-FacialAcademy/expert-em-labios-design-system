@@ -1,5 +1,5 @@
 /* ============================================================================
-   EXPERT EM LABIOS 2026 · DESIGN SYSTEM — v1.0.3
+   EXPERT EM LABIOS 2026 · DESIGN SYSTEM — v1.1.0
    Desenvolvido por Edegar Junior.
    Identidade própria da marca.
    ----------------------------------------------------------------------------
@@ -16,12 +16,12 @@
 /* ===== TOKENS · tema dark (padrão) ======================================== */
 :root{
   /* Cores institucionais — a fonte da verdade. Nada deve sair desta paleta. */
-  --brand-roxo:#6B99E6;        /* azul · do gradiente do 26 · predominante */
-  --brand-lilas:#B3E3FB;       /* azul gelo · do gradiente do 26 */
+  --brand-azul:#6B99E6;        /* azul · do gradiente do 26 · predominante */
+  --brand-azul-gelo:#B3E3FB;       /* azul gelo · do gradiente do 26 */
   --brand-navy:#0F1730;       /* navy · tinta do CTA de gelo */
-  --brand-amarelo:#FFE4A4;     /* 7401 U 25% */
-  --brand-vermelho:#FFB1BD;    /* red 0331 U */
-  --brand-amarelado:#FFCA9B;   /* pantone 712 U */
+  --brand-dourado:#FFE4A4;     /* 7401 U 25% */
+  --brand-rosa:#FFB1BD;    /* red 0331 U */
+  --brand-pessego:#FFCA9B;   /* pantone 712 U */
   --brand-branco:#FFFFFF;
 
   /* Superfícies (dark) */
@@ -29,14 +29,14 @@
   --line:rgba(179,227,251,.14);
 
   /* Roxo / lilás / texto */
-  --roxo:#16306F; --roxo2:var(--brand-roxo); --roxo-bright:#9CD4F5;
-  --lilas:var(--brand-lilas); --lilas-soft:#D5EEFC;
+  --primary-deep:#16306F; --primary:var(--brand-azul); --primary-bright:#9CD4F5;
+  --accent:var(--brand-azul-gelo); --accent-soft:#D5EEFC;
   --txt:#F7FAFE; --mut:#BFC9E0; --legal-mut:#7D89B0;
 
   /* Accent quente (-ink = variante de texto; -line = variante de borda) */
-  --gold:var(--brand-amarelo); --gold-deep:#D6C08A; --gold-ink:#FFE4A4; --gold-line:rgba(255,228,164,.42);
-  --rose:var(--brand-vermelho); --rose-ink:#FFB1BD; --rose-line:rgba(255,177,189,.42);
-  --peach:var(--brand-amarelado);
+  --highlight:var(--brand-dourado); --highlight-deep:#D6C08A; --highlight-ink:#FFE4A4; --highlight-line:rgba(255,228,164,.42);
+  --support:var(--brand-rosa); --support-ink:#FFB1BD; --support-line:rgba(255,177,189,.42);
+  --glow:var(--brand-pessego);
 
   /* Marca (cor do logo SVG via currentColor) */
   --logo:#FFFFFF;
@@ -73,19 +73,28 @@
 
   --font-sans:'Silka','Poppins',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
   color-scheme:dark;
- --cta-grad:linear-gradient(120deg,#B3E3FB,#6B99E6); --cta-solid:#B3E3FB; --cta-solid-h:#9CD4F5; --cta-ink:#0F1730;}
+ --cta-grad:linear-gradient(120deg,#B3E3FB,#6B99E6); --cta-solid:#B3E3FB; --cta-solid-h:#9CD4F5; --cta-ink:#0F1730;
+
+  /* Nomes legados (descontinuados na 1.1.0, saem na 2.0): apontam para os nomes novos.
+     Use os nomes novos em código novo. */
+  --roxo-bright:var(--primary-bright); --lilas-soft:var(--accent-soft); --gold-deep:var(--highlight-deep); --gold-line:var(--highlight-line);
+  --rose-line:var(--support-line); --gold-ink:var(--highlight-ink); --rose-ink:var(--support-ink); --roxo2:var(--primary);
+  --lilas:var(--accent); --peach:var(--glow); --roxo:var(--primary-deep); --gold:var(--highlight);
+  --rose:var(--support); --brand-amarelo:var(--brand-dourado); --brand-vermelho:var(--brand-rosa); --brand-amarelado:var(--brand-pessego);
+  --brand-roxo:var(--brand-azul); --brand-lilas:var(--brand-azul-gelo);
+}
 
 /* Valores do tema light, reutilizados pelos dois seletores abaixo */
 @media (prefers-color-scheme: light){
   :root:not([data-theme="dark"]){
     --bg:#FAFAFA; --bg2:#F2F5FB; --card:#F7F9FD; --card2:#EAEFF9;
     --line:rgba(44,79,163,.16);
-    --roxo:#16306F; --roxo2:#6B99E6; --roxo-bright:#9CD4F5;
-    --lilas:#2C4FA3; --lilas-soft:#244488; --focus-ring:#2C4FA3;
+    --primary-deep:#16306F; --primary:#6B99E6; --primary-bright:#9CD4F5;
+    --accent:#2C4FA3; --accent-soft:#244488; --focus-ring:#2C4FA3;
     --txt:#131A33; --mut:#4F5A7D; --legal-mut:#4F5A7D;
-    --gold:#FFE4A4; --gold-deep:#D6C08A; --gold-ink:#7A5A0E; --gold-line:rgba(122,90,14,.55);
-    --rose:#FFB1BD; --rose-ink:#B04A5E; --rose-line:rgba(176,74,94,.50);
-    --peach:#FFCA9B;
+    --highlight:#FFE4A4; --highlight-deep:#D6C08A; --highlight-ink:#7A5A0E; --highlight-line:rgba(122,90,14,.55);
+    --support:#FFB1BD; --support-ink:#B04A5E; --support-line:rgba(176,74,94,.50);
+    --glow:#FFCA9B;
     --logo:#6B99E6;
     --success:#147A45; --warning:#8A5A00; --danger:#BE2C45; --info:#5E4A8C;
     --success-bg:rgba(31,138,91,.10); --warning-bg:rgba(138,90,0,.10);
@@ -99,12 +108,12 @@
 [data-theme="light"]{
   --bg:#FAFAFA; --focus-ring:#2C4FA3; --bg2:#F2F5FB; --card:#F7F9FD; --card2:#EAEFF9;
   --line:rgba(44,79,163,.16);
-  --roxo:#16306F; --roxo2:#6B99E6; --roxo-bright:#9CD4F5;
-  --lilas:#2C4FA3; --lilas-soft:#244488;
+  --primary-deep:#16306F; --primary:#6B99E6; --primary-bright:#9CD4F5;
+  --accent:#2C4FA3; --accent-soft:#244488;
   --txt:#131A33; --mut:#4F5A7D; --legal-mut:#4F5A7D;
-  --gold:#FFE4A4; --gold-deep:#D6C08A; --gold-ink:#7A5A0E; --gold-line:rgba(122,90,14,.55);
-  --rose:#FFB1BD; --rose-ink:#B04A5E; --rose-line:rgba(176,74,94,.50);
-  --peach:#FFCA9B;
+  --highlight:#FFE4A4; --highlight-deep:#D6C08A; --highlight-ink:#7A5A0E; --highlight-line:rgba(122,90,14,.55);
+  --support:#FFB1BD; --support-ink:#B04A5E; --support-line:rgba(176,74,94,.50);
+  --glow:#FFCA9B;
   --logo:#6B99E6;
   --success:#147A45; --warning:#8A5A00; --danger:#BE2C45; --info:#5E4A8C;
   --success-bg:rgba(31,138,91,.10); --warning-bg:rgba(138,90,0,.10);
@@ -120,11 +129,11 @@
 html{scroll-behavior:smooth}
 body{font-family:var(--font-sans);background:var(--bg);color:var(--txt);line-height:1.5;-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums}
 img,svg,video{display:block;max-width:100%}
-a{color:var(--lilas);text-decoration:none}
+a{color:var(--accent);text-decoration:none}
 
 /* Acessibilidade: foco visível (WCAG 2.4.7 / 1.4.11) + movimento reduzido */
 a:focus-visible,button:focus-visible,.el-btn:focus-visible,[tabindex]:focus-visible{
-  outline:2px solid var(--lilas);outline-offset:2px;box-shadow:var(--focus);border-radius:6px}
+  outline:2px solid var(--accent);outline-offset:2px;box-shadow:var(--focus);border-radius:6px}
 @media (forced-colors: active){
   a:focus-visible,button:focus-visible,.el-btn:focus-visible{outline:2px solid Highlight!important;outline-offset:2px}
 }
@@ -135,7 +144,7 @@ a:focus-visible,button:focus-visible,.el-btn:focus-visible,[tabindex]:focus-visi
 
 /* ===== TIPOGRAFIA · escala fluida (Desktop ⇄ Phone) ======================= */
 /* Breakpoints Framer de referência: Desktop ≥1200 · Tablet ≤810 · Phone ≤390 */
-.el-eyebrow{font-size:clamp(11px,1.4vw,12px);letter-spacing:.18em;text-transform:uppercase;color:var(--lilas);font-weight:600}
+.el-eyebrow{font-size:clamp(11px,1.4vw,12px);letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:600}
 .el-h1{font-size:clamp(34px,6vw,60px);font-weight:500;letter-spacing:-.025em;line-height:1.03}
 .el-h2{font-size:clamp(26px,4vw,38px);font-weight:500;letter-spacing:-.02em;line-height:1.12}
 .el-h3{font-size:clamp(20px,2.4vw,24px);font-weight:500;line-height:1.2}
@@ -147,7 +156,7 @@ a:focus-visible,button:focus-visible,.el-btn:focus-visible,[tabindex]:focus-visi
 .el-small{font-size:14px;font-weight:300;color:var(--mut);line-height:1.6}
 .el-legal{font-size:clamp(11px,1.2vw,12px);font-weight:300;color:var(--legal-mut);line-height:1.5}
 .el-num{font-size:clamp(32px,4.6vw,44px);font-weight:700;line-height:1;font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
-.el-hl{color:var(--lilas)}
+.el-hl{color:var(--accent)}
 
 /* ===== BOTÕES =============================================================
    Estrutura: class="el-btn <variante> <tamanho>"
@@ -164,13 +173,13 @@ a:focus-visible,button:focus-visible,.el-btn:focus-visible,[tabindex]:focus-visi
 .el-btn.el-solid{background:var(--cta-solid);color:var(--cta-ink)}
 .el-btn.el-solid:hover{background:var(--cta-solid-h)}
 .el-btn.el-outline{background:transparent;color:var(--txt);border:1px solid var(--line)}
-.el-btn.el-outline:hover{border-color:var(--lilas);color:var(--lilas)}
-.el-btn.el-ghost{background:transparent;color:var(--lilas);padding:10px 14px;border-radius:var(--radius-sm)}
-.el-btn.el-ghost:hover{color:var(--lilas-soft);text-decoration:underline;text-underline-offset:3px}
-.el-btn.el-gold{background:var(--gold);color:#0F1730;border:1px solid var(--gold-ink)}
-.el-btn.el-gold:hover{background:var(--gold-deep)}
-.el-btn.el-gold-o{background:transparent;color:var(--gold-ink);border:1px solid var(--gold-line)}
-.el-btn.el-gold-o:hover{border-color:var(--gold-ink)}
+.el-btn.el-outline:hover{border-color:var(--accent);color:var(--accent)}
+.el-btn.el-ghost{background:transparent;color:var(--accent);padding:10px 14px;border-radius:var(--radius-sm)}
+.el-btn.el-ghost:hover{color:var(--accent-soft);text-decoration:underline;text-underline-offset:3px}
+.el-btn.el-highlight,.el-btn.el-gold{background:var(--highlight);color:#0F1730;border:1px solid var(--highlight-ink)}
+.el-btn.el-highlight:hover,.el-btn.el-gold:hover{background:var(--highlight-deep)}
+.el-btn.el-highlight-o,.el-btn.el-gold-o{background:transparent;color:var(--highlight-ink);border:1px solid var(--highlight-line)}
+.el-btn.el-highlight-o:hover,.el-btn.el-gold-o:hover{border-color:var(--highlight-ink)}
 .el-btn:active{transform:translateY(0) scale(.985);transition-duration:var(--motion-fast)}
 .el-btn:disabled,.el-btn[aria-disabled="true"]{opacity:.42;pointer-events:none;box-shadow:none;transform:none}
 .el-ico{width:18px;height:18px;flex:0 0 auto}
@@ -181,7 +190,7 @@ a:focus-visible,button:focus-visible,.el-btn:focus-visible,[tabindex]:focus-visi
 .el-chip{display:inline-flex;align-items:center;gap:7px;background:var(--card);border:1px solid var(--line);
   color:var(--txt);font-size:13.5px;padding:9px 16px;border-radius:var(--radius-pill)}
 .el-badge{display:inline-flex;align-items:center;gap:6px;font-size:10.5px;font-weight:600;
-  color:var(--gold-ink);border:1px solid var(--gold-line);padding:4px 10px;border-radius:20px}
+  color:var(--highlight-ink);border:1px solid var(--highlight-line);padding:4px 10px;border-radius:20px}
 .el-status{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;
   padding:9px 15px;border-radius:var(--radius-pill);border:1px solid currentColor}
 .el-status .el-ico{width:16px;height:16px}

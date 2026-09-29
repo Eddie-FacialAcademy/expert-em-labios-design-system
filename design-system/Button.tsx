@@ -52,7 +52,7 @@ export default function Button(props) {
             color: "var(--txt,#F7FAFE)",
             border: "1px solid var(--line,rgba(179,227,251,.14))",
         },
-        ghost: { background: "transparent", color: "var(--lilas,#B3E3FB)" },
+        ghost: { background: "transparent", color: "var(--accent,#B3E3FB)" },
     }
 
     const base: React.CSSProperties = {

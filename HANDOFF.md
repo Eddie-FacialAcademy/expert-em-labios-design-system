@@ -1,4 +1,4 @@
-# Handoff: Expert em Lábios 2026 Design System (Versão 1.0.3 · estado em 2026-09-29)
+# Handoff: Expert em Lábios 2026 Design System (Versão 1.1.0 · estado em 2026-09-29)
 
 Desenvolvido por **Edegar Junior**. Ponto de retomada; atualizar conforme avançar.
 
@@ -11,7 +11,7 @@ Desenvolvido por **Edegar Junior**. Ponto de retomada; atualizar conforme avanç
 
 ### Marca
 - Curso da **Facial Class**, derivado do molde **Facial Academy** (mesma arquitetura, seções e JS).
-- Paleta extraída do **gradiente do 26**: azul gelo `#B3E3FB` e azul `#6B99E6`. Derivadas: azul claro `#9CD4F5`, azul texto `#2C4FA3`, azul CTA claro `#1D3E8F`, azul profundo `#16306F`, navy da tinta `#0F1730`, fundos escuros navy-azulados `#0A0E1D` a `#1F2547`. Apoio herdado: amarelo `#FFE4A4`, vermelho claro `#FFB1BD`, amarelado `#FFCA9B`.
+- Paleta extraída do **gradiente do 26**: azul gelo `#B3E3FB` e azul `#6B99E6`. Derivadas: azul claro `#9CD4F5`, azul texto `#2C4FA3`, azul CTA claro `#1D3E8F`, azul profundo `#16306F`, navy da tinta `#0F1730`, fundos escuros navy-azulados `#0A0E1D` a `#1F2547`. Apoio herdado: amarelo `#FFE4A4`, rosa claro `#FFB1BD`, pêssego `#FFCA9B`.
 - **Logo:** o logo escrito "Expert em LÁBIOS 26", em DUAS versões oficiais com cores fixas do arquivo: fundo escuro (`experte em labios 2026 2.svg`, texto branco + 26 em gradiente) e fundo claro (`experte em lábio 26.svg`, texto azul + 26 branco). **Sem monocromático, sem ícone, sem vertical, sem o logo da Facial Class.** Não recolorir; o showcase troca a versão por tema. Fonte: `34 - Expert em Lábios 2026/_assets` (esses 2 arquivos; o restante da pasta é legado).
 - **CTA de gelo (assinatura da marca no escuro):** gradiente `#B3E3FB → #6B99E6` com tinta navy `#0F1730`; no claro, `#1D3E8F → #2C4FA3` com branco.
 - **Domínio:** preenchimento labial expert (avaliação, proporção, agulha e cânula, naturalidade, casos). Glossário em `design-system/glossario-marca.md`.

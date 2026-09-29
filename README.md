@@ -22,7 +22,7 @@ Pacote para aplicar a marca em **qualquer projeto/ferramenta** (web, React, Fram
 
 ## Notas técnicas
 
-- **Cores:** extraídas do **gradiente do 26** (azul gelo `#B3E3FB`, azul `#6B99E6`) mais o navy `#0F1730` da tinta do CTA e o apoio herdado da família (amarelo claro `#FFE4A4`, vermelho claro `#FFB1BD`, amarelado `#FFCA9B`). Derivadas medidas em WCAG AA nos dois temas (40 pares, 0 falhas).
+- **Cores:** extraídas do **gradiente do 26** (azul gelo `#B3E3FB`, azul `#6B99E6`) mais o navy `#0F1730` da tinta do CTA e o apoio herdado da família (dourado claro `#FFE4A4`, rosa claro `#FFB1BD`, pêssego `#FFCA9B`). Derivadas medidas em WCAG AA nos dois temas (40 pares, 0 falhas).
 - **Logo:** o logo escrito em duas versões oficiais com cores fixas do arquivo (fundo escuro: branco + 26 em gradiente; fundo claro: azul + 26 branco). Sem monocromático e sem ícone; não se recolore.
 - **Tipografia:** Silka (institucional), embutida em base64/woff2; Poppins como fallback, depois system-ui. **Headers em Medium (500)**.
 - **Ícones:** biblioteca **Phosphor**, peso **Thin** (stroke 1pt na grade 24), `currentColor`.
@@ -35,5 +35,6 @@ Repo público `expert-em-labios-design-system` (conta `Eddie-FacialAcademy`), br
 
 ## CHANGELOG
 
+- **1.1.0**: nomes de cor organizados (cores da marca com o nome real, tokens de uso neutros e iguais em todos os DS, nomes antigos como apelidos até a 2.0), seção 13 como "Relação com o molde" e rótulos de gradiente com as cores reais.
 - **1.0.3** (2026-09-29): seletor de design systems inclui a Facial Premium, `--brand-navy` também no showcase e versão alinhada em todos os arquivos.
 - **1.0.0** (2026-08-28): primeira versão da marca, derivada do molde Facial Academy com paleta do gradiente do 26 (gelo e azul). Histórico completo em `design-system/CHANGELOG.md`.

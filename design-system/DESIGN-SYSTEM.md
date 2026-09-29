@@ -1,6 +1,6 @@
 # Expert em Lábios 2026 Design System
 
-**Versão 1.0.3** · Desenvolvido por **Edegar Junior**.
+**Versão 1.1.0** · Desenvolvido por **Edegar Junior**.
 
 Sistema de design portátil para web (HTML/CSS, React, Framer). Dark por padrão, light por troca de tema. Esta pasta é a **fonte da verdade** para aplicar a marca em qualquer projeto.
 
@@ -54,7 +54,7 @@ Importe `expert-em-labios-design-tokens.json` e gere variáveis no seu formato (
 ## Fundamentos
 
 ### Cores institucionais (base: não inventar fora disto)
-`#6B99E6` azul · `#B3E3FB` azul gelo · `#0F1730` navy · `#FFE4A4` amarelo · `#FFB1BD` vermelho · `#FFCA9B` amarelado · `#FFFFFF` branco.
+`#6B99E6` azul · `#B3E3FB` azul gelo · `#0F1730` navy · `#FFE4A4` dourado claro · `#FFB1BD` rosa claro · `#FFCA9B` pêssego · `#FFFFFF` branco.
 
 ### Tema
 - **Dark é o padrão.** Light ativa com `data-theme="light"` no `<html>`; sem atributo, segue `prefers-color-scheme`.
@@ -62,10 +62,10 @@ Importe `expert-em-labios-design-tokens.json` e gere variáveis no seu formato (
 ```html
 <script>(function(){try{var t=localStorage.getItem('el-theme');if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';document.documentElement.setAttribute('data-theme',t)}catch(e){document.documentElement.setAttribute('data-theme','dark')}})();</script>
 ```
-No light, **dourado e rosa como texto** usam variantes `-ink` (`--gold-ink`, `--rose-ink`); como preenchimento mantêm a cor institucional. A marca (`--logo`) usa as cores do arquivo: branca no dark e azul `#6B99E6` no light.
+No light, **dourado e rosa como texto** usam variantes `-ink` (`--highlight-ink`, `--support-ink`); como preenchimento mantêm a cor institucional. A marca (`--logo`) usa as cores do arquivo: branca no dark e azul `#6B99E6` no light.
 
 ### CTA: token theme-aware (`--cta`)
-O CTA (botão preenchido/sólido) consome o token **`--cta`** em vez de `--roxo2`/`--roxo-bright` direto, para garantir **contraste de componente** (WCAG 1.4.11, ver Acessibilidade nível 2). Tokens: `--cta-grad` · `--cta-solid` · `--cta-solid-h` · `--cta-ink`.
+O CTA (botão preenchido/sólido) consome o token **`--cta`** em vez de `--primary`/`--primary-bright` direto, para garantir **contraste de componente** (WCAG 1.4.11, ver Acessibilidade nível 2). Tokens: `--cta-grad` · `--cta-solid` · `--cta-solid-h` · `--cta-ink`.
 
 | Tema | `--cta-solid` | `--cta-grad` | hover (`--cta-solid-h`) | `--cta-ink` |
 |---|---|---|---|---|
@@ -187,11 +187,11 @@ Somente cores do brand. **Não usar conic, blob nem halo**; preferir **meshes** 
 
 ### Botão: `el-btn`
 `class="el-btn <variante> <tamanho>"`
-- **Variantes:** `el-fill` (gradiente do CTA, primário) · `el-solid` · `el-outline` · `el-ghost` (texto) · `el-gold` · `el-gold-o`
+- **Variantes:** `el-fill` (gradiente do CTA, primário) · `el-solid` · `el-outline` · `el-ghost` (texto) · `el-highlight` · `el-highlight-o`
 - **Tamanhos:** `el-sm` · (md = padrão) · `el-lg`
 - **Estados:** hover · `:active` · `:focus-visible` · `:disabled` / `[aria-disabled]`
 - **Regras:** altura mínima 44px, raio pill, ícone Phosphor opcional (`<svg class="el-ico">`). Use `<button>` (não `<a>` sem href) para ser focável.
-- **CTA (preenchido/sólido) consome o token `--cta`, nunca `--roxo2`/`--roxo-bright` direto.** `.el-btn.el-fill` usa `--cta-grad` + `--cta-ink`; `.el-btn.el-solid` usa `--cta-solid` (hover `--cta-solid-h`). O `--cta` é **theme-aware** (ver "CTA: token theme-aware" nos Fundamentos): no escuro é o botão de gelo `#B3E3FB` com tinta navy `#0F1730`, que passa contraste de componente (WCAG 1.4.11, ≥3:1 vs fundo); no claro usa azul profundo `#1D3E8F` com branco.
+- **CTA (preenchido/sólido) consome o token `--cta`, nunca `--primary`/`--primary-bright` direto.** `.el-btn.el-fill` usa `--cta-grad` + `--cta-ink`; `.el-btn.el-solid` usa `--cta-solid` (hover `--cta-solid-h`). O `--cta` é **theme-aware** (ver "CTA: token theme-aware" nos Fundamentos): no escuro é o botão de gelo `#B3E3FB` com tinta navy `#0F1730`, que passa contraste de componente (WCAG 1.4.11, ≥3:1 vs fundo); no claro usa azul profundo `#1D3E8F` com branco.
 
 ### Status / feedback: `el-status is-success|is-warning|is-danger|is-info`
 Sempre **ícone + texto**, nunca só cor. Verde/âmbar/vermelho saem da paleta de propósito (são funcionais).
@@ -205,7 +205,7 @@ Sempre **ícone + texto**, nunca só cor. Verde/âmbar/vermelho saem da paleta d
 - **Contraste WCAG AA em 2 níveis:**
   - **Nível 1 (texto):** ≥4.5:1 (texto normal) / ≥3:1 (texto grande). No light, dourado/rosa como texto = `-ink`.
   - **Nível 2 (componente/botão):** elemento vs fundo ≥3:1 (WCAG 1.4.11). O CTA escuro usa o gelo `#B3E3FB` com tinta navy `#0F1730` (12.9:1); nada foi "clareado", a marca nasceu assim.
-- **Foco visível:** `outline:2px solid var(--lilas)` + `box-shadow var(--focus)`; guard `@media (forced-colors: active)`.
+- **Foco visível:** `outline:2px solid var(--accent)` + `box-shadow var(--focus)`; guard `@media (forced-colors: active)`.
 - **`prefers-reduced-motion`:** reduzir transições/animações.
 - **Toque ≥44px.** **Cor nunca sozinha** (estados com ícone+texto).
 
